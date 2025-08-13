@@ -27,7 +27,7 @@ print(media_por_idade)
 print("\n- Contagem de aprovados e reprovados:")
 print(contagem_situacao)
 
-# Gráfico c
+# Gráfico 
 fig, ax1 = plt.subplots(figsize=(9,5))
 
 plt.figure(figsize=(8,5))
