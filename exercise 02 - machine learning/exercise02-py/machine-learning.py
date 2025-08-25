@@ -7,9 +7,6 @@ from sklearn.metrics import accuracy_score, confusion_matrix, classification_rep
 
 dados = pd.read_csv("Iris.csv")
 
-print("Primeiras linhas do datase liberado:")
-print(dados.head(), "\n")
-
 X = dados.drop(columns=["Id", "Species"])
 y = dados["Species"]
 
@@ -25,13 +22,13 @@ y_pred = modelo.predict(X_test)
 acuracia = accuracy_score(y_test, y_pred)
 print(f"✅ Acurácia do modelo: {acuracia*100:.2f}%\n")
 
-print("📊 Relatório de Classificação (por espécie):")
+print("Relatório de Classificação (por espécie):")
 print(classification_report(y_test, y_pred, target_names=modelo.classes_))
 
 cm = confusion_matrix(y_test, y_pred, labels=modelo.classes_)
 
 plt.figure(figsize=(6,4))
-sns.heatmap(cm, annot=True, fmt="d", cmap="Blues",
+sns.heatmap(cm, annot=True, fmt="d", cmap="Reds",  
             xticklabels=modelo.classes_,
             yticklabels=modelo.classes_)
 plt.title("Matriz de Confusão")
